@@ -14,11 +14,6 @@ Installation
 
 Minimum of Java 7 and Thymeleaf 3.0 required.
 
-### Standalone distribution
-Copy the JAR from [one of the release bundles](https://github.com/ultraq/thymeleaf-expression-processor/releases),
-placing it in the classpath of your program, or build the project from the
-source code here on GitHub.
-
 ### For Maven and Maven-compatible dependency managers
 Add a dependency to your project with the following co-ordinates:
 
