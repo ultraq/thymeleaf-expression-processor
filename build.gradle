@@ -34,6 +34,12 @@ dependencies {
 		'org.codehaus.groovy:groovy:2.4.6',
 		'org.thymeleaf:thymeleaf:3.0.0.RELEASE'
 	)
+	testCompile(
+		'junit:junit:4.12'
+	)
+	testRuntime(
+		'org.slf4j:slf4j-simple:1.7.12'
+	)
 }
 
 groovydoc {
