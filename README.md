@@ -26,6 +26,7 @@ Add a dependency to your project with the following co-ordinates:
 Usage
 -----
 
-Create an instance of `ExpressionProcessor` using the current `ITemplateContext`
-(one of the parameters passed to processors), and then parse or process any
-string that is a Thymeleaf expression, using any of the instance methods.
+Create an instance of `ExpressionProcessor` using the current expression context
+(an `ITemplateContext`, one of the parameters passed to processors, extends the
+expression context, so can be used), and then parse or process any string that
+is a Thymeleaf expression, using any of the instance methods.
