@@ -16,7 +16,9 @@
 
 package nz.net.ultraq.thymeleaf.expressions
 
-import org.thymeleaf.context.ITemplateContext
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+import org.thymeleaf.context.IExpressionContext
 import org.thymeleaf.standard.expression.FragmentExpression
 import org.thymeleaf.standard.expression.IStandardExpression
 import org.thymeleaf.standard.expression.StandardExpressions
@@ -30,16 +32,17 @@ import java.util.regex.Pattern
  */
 class ExpressionProcessor {
 
+	private static final Logger logger = LoggerFactory.getLogger(ExpressionProcessor)
 	private static final Pattern THYMELEAF_3_FRAGMENT_EXPRESSION = ~/^~\{.+\}$/
 
-	private final ITemplateContext context
+	private final IExpressionContext context
 
 	/**
 	 * Constructor, sets the execution context.
 	 * 
 	 * @param context
 	 */
-	ExpressionProcessor(ITemplateContext context) {
+	ExpressionProcessor(IExpressionContext context) {
 
 		this.context = context
 	}
@@ -58,16 +61,25 @@ class ExpressionProcessor {
 
 	/**
 	 * Parses an expression under the assumption it is a fragment expression.
-	 * This method will take care to wrap fragment expressions written in
-	 * Thymeleaf 2 syntax as a backwards compatibility measure for those migrating
-	 * their wep apps to Thymeleaf 3.
+	 * This method will wrap fragment expressions written in Thymeleaf 2 syntax as
+	 * a temporary backwards compatibility measure for those migrating their web
+	 * apps to Thymeleaf 3.
 	 * 
 	 * @param expression
 	 * @return A fragment expression.
 	 */
 	FragmentExpression parseFragmentExpression(String expression) {
 
-		return parse(expression.matches(THYMELEAF_3_FRAGMENT_EXPRESSION) ? expression : "~{${expression}}")
+		if (!expression.matches(THYMELEAF_3_FRAGMENT_EXPRESSION)) {
+			logger.warn(
+				'Fragment expression "{}" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  ' +
+				'This wrapping will be dropped in future versions of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  ' +
+				'See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.',
+				expression)
+			return parse("~{${expression}}")
+		}
+
+		return parse(expression)
 	}
 
 	/**
