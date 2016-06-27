@@ -73,7 +73,7 @@ class ExpressionProcessor {
 		if (!expression.matches(THYMELEAF_3_FRAGMENT_EXPRESSION)) {
 			logger.warn(
 				'Fragment expression "{}" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  ' +
-				'This wrapping will be dropped in future versions of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  ' +
+				'This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  ' +
 				'See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.',
 				expression)
 			return parse("~{${expression}}")
