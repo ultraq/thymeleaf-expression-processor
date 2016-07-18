@@ -34,6 +34,7 @@ class ExpressionProcessor {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpressionProcessor)
 	private static final Pattern THYMELEAF_3_FRAGMENT_EXPRESSION = ~/^~\{.+\}$/
+	private static final HashSet<String> oldFragmentExpressions = []
 
 	private final IExpressionContext context
 
@@ -71,11 +72,14 @@ class ExpressionProcessor {
 	FragmentExpression parseFragmentExpression(String expression) {
 
 		if (!expression.matches(THYMELEAF_3_FRAGMENT_EXPRESSION)) {
-			logger.warn(
-				'Fragment expression "{}" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  ' +
-				'This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  ' +
-				'See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.',
-				expression)
+			if (!oldFragmentExpressions.contains(expression)) {
+				logger.warn(
+					'Fragment expression "{}" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  ' +
+					'This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  ' +
+					'See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.',
+					expression)
+				oldFragmentExpressions << expression
+			}
 			return parse("~{${expression}}")
 		}
 
