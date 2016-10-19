@@ -23,8 +23,6 @@ import org.thymeleaf.standard.expression.FragmentExpression
 import org.thymeleaf.standard.expression.IStandardExpression
 import org.thymeleaf.standard.expression.StandardExpressions
 
-import java.util.regex.Pattern
-
 /**
  * A simplified API for working with Thymeleaf expressions.
  * 
@@ -33,7 +31,7 @@ import java.util.regex.Pattern
 class ExpressionProcessor {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpressionProcessor)
-	private static final Pattern THYMELEAF_3_FRAGMENT_EXPRESSION = ~/^~\{.+\}$/
+	private static final String THYMELEAF_3_FRAGMENT_EXPRESSION = /(?s)^~\{.+\}$/
 	private static final HashSet<String> oldFragmentExpressions = []
 
 	private final IExpressionContext context
