@@ -69,7 +69,7 @@ class ExpressionProcessor {
 	 */
 	FragmentExpression parseFragmentExpression(String expression) {
 
-		if (!expression.matches(THYMELEAF_3_FRAGMENT_EXPRESSION)) {
+		if (expression && !expression.matches(THYMELEAF_3_FRAGMENT_EXPRESSION)) {
 			if (!oldFragmentExpressions.contains(expression)) {
 				logger.warn(
 					'Fragment expression "{}" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  ' +

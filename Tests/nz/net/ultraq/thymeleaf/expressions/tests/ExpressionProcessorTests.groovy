@@ -86,6 +86,22 @@ class ExpressionProcessorTests {
 	}
 
 	/**
+	 * {@code null} testing of fragment expression parsing since it does
+	 * operations on the expression before passing it to the parser.
+	 */
+	@Test
+	void parseFragmentExpressionNull() {
+
+		try {
+			expressionProcessor.parseFragmentExpression(null)
+			fail('Expecting IllegalArgumentException')
+		}
+		catch (ex) {
+			assertTrue(ex instanceof IllegalArgumentException)
+		}
+	}
+
+	/**
 	 * Tests multi-line fragment expressions.
 	 */
 	@Test
