@@ -31,6 +31,7 @@ import org.thymeleaf.standard.expression.VariableExpression
  * 
  * @author Emanuel Rabina
  */
+@SuppressWarnings('GStringExpressionWithinString')
 class ExpressionProcessorTests {
 
 	private static TemplateEngine templateEngine
@@ -88,6 +89,7 @@ class ExpressionProcessorTests {
 	 * {@code null} testing of fragment expression parsing since it does
 	 * operations on the expression before passing it to the parser.
 	 */
+	@SuppressWarnings('ConstantAssertExpression')
 	@Test
 	void parseFragmentExpressionNull() {
 

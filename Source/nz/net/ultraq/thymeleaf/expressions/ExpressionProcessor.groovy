@@ -32,6 +32,8 @@ class ExpressionProcessor {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpressionProcessor)
 	private static final String THYMELEAF_3_FRAGMENT_EXPRESSION = /(?s)^~\{.+\}$/
+
+	@SuppressWarnings('FieldName')
 	private static final HashSet<String> oldFragmentExpressions = []
 
 	private final IExpressionContext context
