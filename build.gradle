@@ -36,7 +36,7 @@ project.year     = '2016'
 
 dependencies {
 	compile(
-		'org.codehaus.groovy:groovy:2.4.6',
+		'org.codehaus.groovy:groovy:2.4.16',
 		'org.thymeleaf:thymeleaf:3.0.0.RELEASE'
 	)
 	testCompile(
