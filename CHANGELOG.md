@@ -4,6 +4,10 @@ Changelog
 
 This project follows [Semantic Versioning](http://semver.org/).
 
+### 1.2.0
+ - Upgrade Groovy dependency to 2.5.8 and utilize some 2.5.x features
+ - Swap out JUnit for Spock
+
 ### 1.1.3
  - `null` check before attempting to check a fragment expression, potential fix
    for this issue over in the layout dialect:
