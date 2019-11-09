@@ -23,11 +23,14 @@ import org.thymeleaf.standard.expression.FragmentExpression
 import org.thymeleaf.standard.expression.IStandardExpression
 import org.thymeleaf.standard.expression.StandardExpressions
 
+import groovy.transform.TupleConstructor
+
 /**
  * A simplified API for working with Thymeleaf expressions.
  * 
  * @author Emanuel Rabina
  */
+@TupleConstructor(defaults = false)
 class ExpressionProcessor {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpressionProcessor)
@@ -36,17 +39,7 @@ class ExpressionProcessor {
 	@SuppressWarnings('FieldName')
 	private static final HashSet<String> oldFragmentExpressions = []
 
-	private final IExpressionContext context
-
-	/**
-	 * Constructor, sets the execution context.
-	 * 
-	 * @param context
-	 */
-	ExpressionProcessor(IExpressionContext context) {
-
-		this.context = context
-	}
+	final IExpressionContext context
 
 	/**
 	 * Parses an expression, returning the matching expression type.

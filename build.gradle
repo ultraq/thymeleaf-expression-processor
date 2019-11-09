@@ -24,19 +24,18 @@ plugins {
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.1.0/gradle-support.gradle'
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.1.0/maven-support.gradle'
 
-//project.name = 'Thymeleaf Expression Proessor'
 project.description = 'A simplified API for working with Thymeleaf expressions'
 project.archivesBaseName = 'thymeleaf-expression-processor'
 project.sourceCompatibility = '1.7'
 
 project.group    = 'nz.net.ultraq.thymeleaf'
 project.artifact = 'thymeleaf-expression-processor'
-project.version  = '1.1.3'
+project.version  = '1.2.0-SNAPSHOT'
 project.year     = '2016'
 
 dependencies {
 	compile(
-		'org.codehaus.groovy:groovy:2.4.16',
+		'org.codehaus.groovy:groovy:2.5.8',
 		'org.thymeleaf:thymeleaf:3.0.0.RELEASE'
 	)
 	testCompile(
@@ -45,15 +44,6 @@ dependencies {
 	testRuntime(
 		'org.slf4j:slf4j-simple:1.7.12'
 	)
-}
-
-codenarc {
-	def sharedConfig = 'https://raw.githubusercontent.com/ultraq/codenarc-config-ultraq/master/codenarc.groovy'.toURL().text
-	config = resources.text.fromString(sharedConfig)
-}
-
-cobertura {
-	coverageFormats = ['html', 'xml']
 }
 
 groovydoc {
