@@ -32,23 +32,25 @@ Create an instance of `ExpressionProcessor` using the current expression context
 and then parse/process any string that is a Thymeleaf expression, using any of
 the instance methods described below:
 
-### `parse(String expression) -> IStandardExpression`
+#### parse(String expression) -> IStandardExpression
 
 Parses an expression, returning the matching expression type.
 
-### `parseFragmentExpression(String fragmentExpression) -> FragmentExpression`
+#### parseFragmentExpression(String fragmentExpression) -> FragmentExpression
 
 Parses an expression under the assumption it is a fragment expression.  This
 method will wrap fragment expressions written in Thymeleaf 2 syntax as a
-temporary backwards compatibility measure for those migrating their web apps to
-Thymeleaf 3.
+backwards compatibility measure for those migrating their web apps to Thymeleaf
+3.  (This is because Thymeleaf 3 currently does the same, but expect this method
+to go away when Thymeleaf starts enforcing the new fragment expression syntax
+itself.)
 
-### `process(String expression) -> Object`
+#### process(String expression) -> Object
 
 Parse and executes an expression, returning whatever the type of the expression
 result is.
 
-### `pocessAsString(String expression) -> String`
+#### pocessAsString(String expression) -> String
 
 Parse and execute an expression, returning the result as a string.  Useful for
 expressions that expect a simple result.
