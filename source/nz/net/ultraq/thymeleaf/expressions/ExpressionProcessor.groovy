@@ -80,8 +80,8 @@ class ExpressionProcessor {
 	}
 
 	/**
-	 * Parses and executes an expression, returning the result of the expression
-	 * having been parsed and executed.
+	 * Parse and executes an expression, returning whatever the type of the
+	 * expression result is.
 	 * 
 	 * @param expression
 	 * @return The result of the expression being executed.

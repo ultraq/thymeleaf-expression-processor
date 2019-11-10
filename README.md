@@ -28,6 +28,27 @@ Usage
 -----
 
 Create an instance of `ExpressionProcessor` using the current expression context
-(an `ITemplateContext`, one of the parameters passed to processors, extends the
-expression context, so can be used), and then parse or process any string that
-is a Thymeleaf expression, using any of the instance methods.
+(the context object passed to Thymeleaf processors is a type of `IExpressionContext`),
+and then parse/process any string that is a Thymeleaf expression, using any of
+the instance methods described below:
+
+### `IStandardExpression parse(String expression)`
+
+Parses an expression, returning the matching expression type.
+
+### `FragmentExpression parseFragmentExpression(String fragmentExpression)`
+
+Parses an expression under the assumption it is a fragment expression.  This
+method will wrap fragment expressions written in Thymeleaf 2 syntax as a
+temporary backwards compatibility measure for those migrating their web apps to
+Thymeleaf 3.
+
+### `Object process(String expression)`
+
+Parse and executes an expression, returning whatever the type of the expression
+result is.
+
+### `String processAsString(String expression)`
+
+Parse and execute an expression, returning the result as a string.  Useful for
+expressions that expect a simple result.
