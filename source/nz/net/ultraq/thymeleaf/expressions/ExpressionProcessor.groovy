@@ -34,7 +34,6 @@ import groovy.transform.TupleConstructor
 class ExpressionProcessor {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpressionProcessor)
-	private static final String THYMELEAF_3_FRAGMENT_EXPRESSION = /(?s)^~\{.+\}$/
 
 	@SuppressWarnings('FieldName')
 	private static final HashSet<String> oldFragmentExpressions = []
@@ -56,15 +55,17 @@ class ExpressionProcessor {
 	/**
 	 * Parses an expression under the assumption it is a fragment expression.
 	 * This method will wrap fragment expressions written in Thymeleaf 2 syntax as
-	 * a temporary backwards compatibility measure for those migrating their web
-	 * apps to Thymeleaf 3.
+	 * a backwards compatibility measure for those migrating their web apps to
+	 * Thymeleaf 3.  (This is because Thymeleaf 3 currently does the same, but
+	 * expect this method to go away when Thymeleaf starts enforcing the new
+	 * fragment expression syntax itself.)
 	 * 
 	 * @param expression
 	 * @return A fragment expression.
 	 */
 	FragmentExpression parseFragmentExpression(String expression) {
 
-		if (expression && !expression.matches(THYMELEAF_3_FRAGMENT_EXPRESSION)) {
+		if (expression && !(expression ==~ /(?s)^~\{.+\}$/)) {
 			if (!oldFragmentExpressions.contains(expression)) {
 				logger.warn(
 					'Fragment expression "{}" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  ' +
