@@ -5,7 +5,7 @@ Changelog
 This project follows [Semantic Versioning](http://semver.org/).
 
 ### 1.2.0
- - Upgrade Groovy dependency to 2.5.8 and utilize some 2.5.x features
+ - Upgrade Groovy dependency to 2.5.11 and utilize some 2.5.x features
  - Swap out JUnit for Spock
 
 ### 1.1.3
