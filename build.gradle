@@ -45,6 +45,11 @@ dependencies {
 	testRuntimeOnly(
 		'org.slf4j:slf4j-simple:1.7.12'
 	)
+	// Needed for Codenarc to work on Java 14 for now, see: https://github.com/gradle/gradle/issues/12646
+	constraints {
+		codenarc('org.codehaus.groovy:groovy:3.0.3')
+		codenarc('org.codehaus.groovy:groovy-xml:3.0.3')
+	}
 }
 
 groovydoc {
