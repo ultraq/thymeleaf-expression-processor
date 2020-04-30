@@ -22,8 +22,8 @@ plugins {
 	id 'com.github.kt3k.coveralls' version '2.10.1'
 	id 'distribution'
 }
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.1.0/gradle-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.1.0/maven-publish-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.1.1/gradle-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.1.1/maven-publish-support.gradle'
 
 description = 'A simplified API for working with Thymeleaf expressions'
 sourceCompatibility = '1.8'
