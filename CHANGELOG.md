@@ -2,8 +2,6 @@
 Changelog
 =========
 
-This project follows [Semantic Versioning](http://semver.org/).
-
 ### 2.0.0
  - Minimum required Java version is now 8
  - Upgrade to Groovy 3.0.3
