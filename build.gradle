@@ -15,12 +15,13 @@
  */
 
 plugins {
+	id 'java-library'
 	id 'groovy'
 	id 'codenarc'
-	id 'maven-publish'
 	id 'jacoco'
 	id 'com.github.kt3k.coveralls' version '2.10.1'
 	id 'distribution'
+	id 'maven-publish'
 }
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.2.1/gradle-support.gradle'
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.2.1/maven-publish-support.gradle'
@@ -30,12 +31,14 @@ sourceCompatibility = '1.8'
 
 group    = 'nz.net.ultraq.thymeleaf'
 artifact = 'thymeleaf-expression-processor'
-version  = '2.0.0'
+version  = '2.0.1-SNAPSHOT'
 year     = '2016'
 
 dependencies {
-	implementation(
+	api(
 		'org.codehaus.groovy:groovy:3.0.3',
+	)
+	implementation(
 		'org.thymeleaf:thymeleaf:3.0.11.RELEASE'
 	)
 	testImplementation(
