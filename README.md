@@ -52,7 +52,7 @@ itself.)
 Parse and executes an expression, returning whatever the type of the expression
 result is.
 
-#### pocessAsString(String expression) -> String
+#### processAsString(String expression) -> String
 
 Parse and execute an expression, returning the result as a string.  Useful for
 expressions that expect a simple result.
