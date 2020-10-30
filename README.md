@@ -19,7 +19,7 @@ Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-expression-processor`
- - Version: `2.0.0`
+ - Version: `2.0.1`
 
 Check the [project releases](https://github.com/ultraq/thymeleaf-expression-processor/releases)
 for a list of available versions.  Each release page also includes a
