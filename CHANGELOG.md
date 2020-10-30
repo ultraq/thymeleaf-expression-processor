@@ -2,6 +2,9 @@
 Changelog
 =========
 
+### 2.0.1
+ - Fix generated POM - Groovy is needed as a `compile` dependency
+
 ### 2.0.0
  - Minimum required Java version is now 8
  - Upgrade to Groovy 3.0.3
