@@ -23,8 +23,8 @@ plugins {
 	id 'distribution'
 	id 'maven-publish'
 }
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.2.1/gradle-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.2.1/maven-publish-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.4.0/gradle-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.4.0/maven-publish-support.gradle'
 
 description = 'A simplified API for working with Thymeleaf expressions'
 sourceCompatibility = '1.8'
@@ -36,13 +36,13 @@ year     = '2016'
 
 dependencies {
 	api(
-		'org.codehaus.groovy:groovy:3.0.3',
+		'org.codehaus.groovy:groovy:3.0.8',
 	)
 	implementation(
 		'org.thymeleaf:thymeleaf:3.0.12.RELEASE'
 	)
 	testImplementation(
-		'org.spockframework:spock-core:2.0-M2-groovy-3.0'
+		'org.spockframework:spock-core:2.0-groovy-3.0'
 	)
 	testRuntimeOnly(
 		'org.slf4j:slf4j-simple:1.7.12'
