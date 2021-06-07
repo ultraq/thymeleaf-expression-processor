@@ -2,7 +2,7 @@
 Thymeleaf Expression Processor
 ==============================
 
-[![Build Status](https://travis-ci.com/ultraq/thymeleaf-expression-processor.svg?branch=main)](https://travis-ci.com/ultraq/thymeleaf-expression-processor)
+[![Build Status](https://github.com/ultraq/thymeleaf-expression-processor/actions/workflows/build.yml/badge.svg)](https://github.com/ultraq/thymeleaf-expression-processor/actions)
 [![Coverage Status](https://coveralls.io/repos/github/ultraq/thymeleaf-expression-processor/badge.svg?branch=main)](https://coveralls.io/github/ultraq/thymeleaf-expression-processor?branch=main)
 [![Maven Central](https://img.shields.io/maven-central/v/nz.net.ultraq.thymeleaf/thymeleaf-expression-processor.svg?maxAge=3600)](http://search.maven.org/#search|ga|1|g%3A%22nz.net.ultraq.thymeleaf%22%20AND%20a%3A%22thymeleaf-expression-processor%22)
 
