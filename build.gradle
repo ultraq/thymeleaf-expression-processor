@@ -31,7 +31,7 @@ sourceCompatibility = '1.8'
 
 group    = 'nz.net.ultraq.thymeleaf'
 artifact = 'thymeleaf-expression-processor'
-version  = '2.0.2-SNAPSHOT'
+version  = '2.1.0-SNAPSHOT'
 year     = '2016'
 
 dependencies {
@@ -47,6 +47,10 @@ dependencies {
 	testRuntimeOnly(
 		'org.slf4j:slf4j-simple:1.7.12'
 	)
+}
+
+compileGroovy {
+	groovyOptions.optimizationOptions.indy = true
 }
 
 groovydoc {
