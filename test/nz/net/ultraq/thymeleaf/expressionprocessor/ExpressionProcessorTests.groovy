@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package nz.net.ultraq.thymeleaf.expressions.tests
-
-import nz.net.ultraq.thymeleaf.expressions.ExpressionProcessor
+package nz.net.ultraq.thymeleaf.expressionprocessor
 
 import org.thymeleaf.TemplateEngine
 import org.thymeleaf.context.ExpressionContext

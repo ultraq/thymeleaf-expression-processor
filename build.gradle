@@ -60,3 +60,9 @@ groovydoc {
 test {
 	useJUnitPlatform()
 }
+
+jar {
+	manifest {
+		attributes('Automatic-Module-Name': 'nz.net.ultraq.thymeleaf.expressionprocessor')
+	}
+}

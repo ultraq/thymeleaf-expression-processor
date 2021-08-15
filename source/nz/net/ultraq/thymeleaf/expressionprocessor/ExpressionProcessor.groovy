@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package nz.net.ultraq.thymeleaf.expressions
+package nz.net.ultraq.thymeleaf.expressionprocessor
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
