@@ -2,6 +2,10 @@
 Changelog
 =========
 
+### 3.0.0
+ - Project now has an automatic module name, `nz.net.ultraq.thymeleaf.expressionprocessor`
+ - Packages reorganized to work with the requirements of Java modules.
+
 ### 2.0.1
  - Fix generated POM - Groovy is needed as a `compile` dependency
 
