@@ -38,6 +38,10 @@ dependencies {
 	implementation(
 		'org.thymeleaf:thymeleaf:3.0.12.RELEASE'
 	)
+	codenarc(
+		'org.codenarc:CodeNarc:2.2.0',
+		'org.codehaus.groovy:groovy-all:3.0.8'
+	)
 	testImplementation(
 		'org.spockframework:spock-core:2.0-groovy-3.0'
 	)
