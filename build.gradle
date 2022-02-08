@@ -19,7 +19,6 @@ plugins {
 	id 'groovy'
 	id 'codenarc'
 	id 'jacoco'
-	id 'com.github.kt3k.coveralls' version '2.10.1'
 	id 'distribution'
 	id 'maven-publish'
 }
