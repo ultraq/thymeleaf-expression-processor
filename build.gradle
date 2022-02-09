@@ -33,29 +33,25 @@ year = '2016'
 
 dependencies {
 	api(
-		'org.codehaus.groovy:groovy:3.0.8',
+		'org.apache.groovy:groovy:4.0.0',
 	)
 	implementation(
-		'org.thymeleaf:thymeleaf:3.0.12.RELEASE'
+		'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
 	)
-	codenarc(
-		'org.codenarc:CodeNarc:2.2.0',
-		'org.codehaus.groovy:groovy-all:3.0.8'
-	)
-	testImplementation(
-		'org.spockframework:spock-core:2.0-groovy-3.0'
-	)
+	codenarc('org.codenarc:CodeNarc:2.2.0') {
+		exclude group: 'org.codehaus.groovy'
+	}
+	codenarc 'org.apache.groovy:groovy-all:4.0.0'
+	testImplementation('org.spockframework:spock-core:2.1-groovy-3.0-SNAPSHOT') {
+		exclude module: 'groovy'
+	}
 	testRuntimeOnly(
-		'org.slf4j:slf4j-simple:1.7.32'
+		'org.slf4j:slf4j-simple:1.7.35'
 	)
-}
-
-compileGroovy {
-	groovyOptions.optimizationOptions.indy = true
 }
 
 groovydoc {
-	link('http://www.thymeleaf.org/apidocs/thymeleaf/3.0.12.RELEASE/', 'org.thymeleaf.')
+	link('https://www.thymeleaf.org/apidocs/thymeleaf/3.0.15.RELEASE/', 'org.thymeleaf.')
 }
 
 test {
