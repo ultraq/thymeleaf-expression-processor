@@ -32,22 +32,18 @@ group = 'nz.net.ultraq.thymeleaf'
 year = '2016'
 
 dependencies {
-	api(
-		'org.apache.groovy:groovy:4.0.0',
-	)
-	implementation(
-		'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
-	)
+	api 'org.apache.groovy:groovy:4.0.0'
+	implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
+
 	codenarc('org.codenarc:CodeNarc:2.2.0') {
 		exclude group: 'org.codehaus.groovy'
 	}
 	codenarc 'org.apache.groovy:groovy-all:4.0.0'
+
 	testImplementation('org.spockframework:spock-core:2.1-groovy-3.0-SNAPSHOT') {
 		exclude module: 'groovy'
 	}
-	testRuntimeOnly(
-		'org.slf4j:slf4j-simple:1.7.35'
-	)
+	testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.35'
 }
 
 groovydoc {
