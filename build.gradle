@@ -40,10 +40,8 @@ dependencies {
 	}
 	codenarc 'org.apache.groovy:groovy-all:4.0.0'
 
-	testImplementation('org.spockframework:spock-core:2.1-groovy-3.0-SNAPSHOT') {
-		exclude module: 'groovy'
-	}
-	testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.35'
+	testImplementation 'org.spockframework:spock-core:2.2-M1-groovy-4.0'
+	testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.36'
 }
 
 groovydoc {
