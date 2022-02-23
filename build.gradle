@@ -26,7 +26,7 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.1/gradl
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.1/maven-publish-support.gradle'
 
 description = 'A simplified API for working with Thymeleaf expressions'
-version = '3.1.0-SNAPSHOT'
+version = '3.1.0'
 sourceCompatibility = '1.8'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2016'
