@@ -2,6 +2,11 @@
 Changelog
 =========
 
+### 3.1.0
+ - Upgraded Groovy to 4.0.0
+ - The `javadoc` artifact in Maven downloads now includes this project's
+   groovydocs, which have been missing thus far
+
 ### 3.0.0
  - Project now has an automatic module name, `nz.net.ultraq.thymeleaf.expressionprocessor`
  - Packages reorganized to work with the requirements of Java modules.
