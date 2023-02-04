@@ -2,6 +2,9 @@
 Changelog
 =========
 
+### 3.1.1
+ - Upgrade Groovy to 4.0.8
+
 ### 3.1.0
  - Upgraded Groovy to 4.0.0
  - The `javadoc` artifact in Maven downloads now includes this project's

@@ -63,6 +63,7 @@ class ExpressionProcessor {
 	 * @param expression
 	 * @return A fragment expression.
 	 */
+	@SuppressWarnings('ParameterReassignment')
 	FragmentExpression parseFragmentExpression(String expression) {
 
 		if (expression && !(expression ==~ /(?s)^~\{.+\}$/)) {
@@ -74,7 +75,7 @@ class ExpressionProcessor {
 					expression)
 				oldFragmentExpressions << expression
 			}
-			return parse("~{${expression}}")
+			expression = "~{${expression}}"
 		}
 
 		return parse(expression)
