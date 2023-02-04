@@ -23,7 +23,9 @@ import org.thymeleaf.standard.expression.FragmentExpression
 import org.thymeleaf.standard.expression.IStandardExpression
 import org.thymeleaf.standard.expression.StandardExpressions
 
+import groovy.transform.CompileStatic
 import groovy.transform.TupleConstructor
+import groovy.transform.stc.POJO
 
 /**
  * A simplified API for working with Thymeleaf expressions.
@@ -31,6 +33,8 @@ import groovy.transform.TupleConstructor
  * @author Emanuel Rabina
  */
 @TupleConstructor(defaults = false)
+@CompileStatic
+@POJO
 class ExpressionProcessor {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpressionProcessor)
@@ -78,7 +82,7 @@ class ExpressionProcessor {
 			expression = "~{${expression}}"
 		}
 
-		return parse(expression)
+		return parse(expression) as FragmentExpression
 	}
 
 	/**
