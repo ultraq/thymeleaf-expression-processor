@@ -1,0 +1,13 @@
+[
+{
+	"name":"nz.net.ultraq.thymeleaf.expressionprocessor.ExpressionProcessor",
+	"allDeclaredFields":true,
+	"queryAllDeclaredMethods":true,
+	"queryAllPublicMethods":true,
+	"queryAllDeclaredConstructors":true,
+	"methods":[
+		{"name":"<init>","parameterTypes":["org.thymeleaf.context.IExpressionContext"] },
+		{"name":"parseFragmentExpression","parameterTypes":["java.lang.String"] }
+	]
+}
+]
