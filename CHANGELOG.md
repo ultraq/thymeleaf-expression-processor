@@ -3,7 +3,7 @@ Changelog
 =========
 
 ### 3.1.1
- - Upgrade Groovy to 4.0.8
+ - Upgrade Groovy to 4.0.9
  - Applied `@CompileStatic` and `@POJO` annotations to `ExpressionProcessor` so
    it can play better with current versions of GraalVM.  See: https://github.com/oracle/graal/issues/4484
 
