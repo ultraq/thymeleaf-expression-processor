@@ -32,9 +32,9 @@ import groovy.transform.stc.POJO
  * 
  * @author Emanuel Rabina
  */
-@TupleConstructor(defaults = false)
 @CompileStatic
 @POJO
+@TupleConstructor(defaults = false)
 class ExpressionProcessor {
 
 	private static final Logger logger = LoggerFactory.getLogger(ExpressionProcessor)
