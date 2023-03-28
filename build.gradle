@@ -26,13 +26,13 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/gradl
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/maven-publish-support.gradle'
 
 description = 'A simplified API for working with Thymeleaf expressions'
-version = '3.1.1-SNAPSHOT'
+version = '3.1.1'
 sourceCompatibility = '1.8'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2016'
 
 dependencies {
-	api 'org.apache.groovy:groovy:4.0.9'
+	api 'org.apache.groovy:groovy:4.0.10'
 	implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
 
 	codenarc 'org.codenarc:CodeNarc:3.2.0-groovy-4.0'
