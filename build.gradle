@@ -27,21 +27,27 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/maven
 
 description = 'A simplified API for working with Thymeleaf expressions'
 version = '3.1.1'
-sourceCompatibility = '1.8'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2016'
 
-dependencies {
-	api 'org.apache.groovy:groovy:4.0.10'
-	implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
+def thymeleafVersion = '3.0.15.RELEASE'
 
-	codenarc 'org.codenarc:CodeNarc:3.2.0-groovy-4.0'
+dependencies {
+	api 'org.apache.groovy:groovy:4.0.14'
+	implementation "org.thymeleaf:thymeleaf:${thymeleafVersion}"
+
+	codenarc 'org.codenarc:CodeNarc:3.3.0-groovy-4.0'
 	testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.36'
 }
 
+java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+}
+
 groovydoc {
-	link('https://www.thymeleaf.org/apidocs/thymeleaf/3.0.15.RELEASE/', 'org.thymeleaf.')
+	link("https://www.thymeleaf.org/apidocs/thymeleaf/${thymeleafVersion}/", 'org.thymeleaf.')
 }
 
 test {
