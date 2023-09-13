@@ -2,6 +2,10 @@
 Changelog
 =========
 
+### 3.2.0
+ - Upgrade Groovy to 4.0.14
+ - Upgrade Thymeleaf to 3.1.2.RELEASE
+
 ### 3.1.1
  - Upgrade Groovy to 4.0.10
  - Applied `@CompileStatic` and `@POJO` annotations to `ExpressionProcessor` so

@@ -12,14 +12,14 @@ A simplified API for working with Thymeleaf expressions.
 Installation
 ------------
 
-Minimum of Java 8 and Thymeleaf 3.0 required.
+Minimum of Java 8 and Thymeleaf 3.1 required.
 
 ### For Maven and Maven-compatible dependency managers
 Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-expression-processor`
- - Version: `3.1.0`
+ - Version: `3.2.0`
 
 Check the [project releases](https://github.com/ultraq/thymeleaf-expression-processor/releases)
 for a list of available versions.  Each release page also includes a
@@ -42,8 +42,8 @@ Parses an expression, returning the matching expression type.
 
 Parses an expression under the assumption it is a fragment expression.  This
 method will wrap fragment expressions written in Thymeleaf 2 syntax as a
-backwards compatibility measure for those migrating their web apps to Thymeleaf
-3.  (This is because Thymeleaf 3 currently does the same, but expect this method
+backwards compatibility measure for those migrating their web apps to Thymeleaf 3.
+(This is because Thymeleaf 3 currently does the same, but expect this method
 to go away when Thymeleaf starts enforcing the new fragment expression syntax
 itself.)
 

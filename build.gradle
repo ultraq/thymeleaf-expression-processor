@@ -26,11 +26,11 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/gradl
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/maven-publish-support.gradle'
 
 description = 'A simplified API for working with Thymeleaf expressions'
-version = '3.1.1'
+version = '3.2.0-SNAPSHOT'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2016'
 
-def thymeleafVersion = '3.0.15.RELEASE'
+def thymeleafVersion = '3.1.2.RELEASE'
 
 dependencies {
 	api 'org.apache.groovy:groovy:4.0.14'
@@ -39,7 +39,7 @@ dependencies {
 	codenarc 'org.codenarc:CodeNarc:3.3.0-groovy-4.0'
 	testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.36'
+	testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.9'
 }
 
 java {
