@@ -12,14 +12,14 @@ A simplified API for working with Thymeleaf expressions.
 Installation
 ------------
 
-Minimum of Java 8 and Thymeleaf 3.1 required.
+Minimum of Java 17 and Thymeleaf 3.1 required.
 
 ### For Maven and Maven-compatible dependency managers
 Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-expression-processor`
- - Version: `3.2.0`
+ - Version: `4.0.0-SNAPSHOT`
 
 Check the [project releases](https://github.com/ultraq/thymeleaf-expression-processor/releases)
 for a list of available versions.  Each release page also includes a
