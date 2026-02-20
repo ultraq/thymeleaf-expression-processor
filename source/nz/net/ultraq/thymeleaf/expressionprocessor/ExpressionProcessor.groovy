@@ -1,12 +1,12 @@
-/* 
+/*
  * Copyright 2016, Emanuel Rabina (http://www.ultraq.net.nz/)
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -29,7 +29,7 @@ import groovy.transform.stc.POJO
 
 /**
  * A simplified API for working with Thymeleaf expressions.
- * 
+ *
  * @author Emanuel Rabina
  */
 @CompileStatic
@@ -46,7 +46,7 @@ class ExpressionProcessor {
 
 	/**
 	 * Parses an expression, returning the matching expression type.
-	 * 
+	 *
 	 * @param expression
 	 * @return Matching expression type.
 	 */
@@ -63,23 +63,22 @@ class ExpressionProcessor {
 	 * Thymeleaf 3.  (This is because Thymeleaf 3 currently does the same, but
 	 * expect this method to go away when Thymeleaf starts enforcing the new
 	 * fragment expression syntax itself.)
-	 * 
+	 *
 	 * @param expression
 	 * @return A fragment expression.
 	 */
-	@SuppressWarnings('ParameterReassignment')
 	FragmentExpression parseFragmentExpression(String expression) {
 
-		if (expression && !(expression ==~ /(?s)^~\{.+\}$/)) {
+		if (expression && !(expression ==~ /(?s)^~\{.+}$/)) {
 			if (!oldFragmentExpressions.contains(expression)) {
 				logger.warn(
 					'Fragment expression "{}" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  ' +
-					'This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  ' +
+					'This wrapping will be dropped in a future version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  ' +
 					'See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.',
 					expression)
 				oldFragmentExpressions << expression
 			}
-			expression = "~{${expression}}"
+			return parse("~{${expression}}") as FragmentExpression
 		}
 
 		return parse(expression) as FragmentExpression
@@ -88,7 +87,7 @@ class ExpressionProcessor {
 	/**
 	 * Parse and executes an expression, returning whatever the type of the
 	 * expression result is.
-	 * 
+	 *
 	 * @param expression
 	 * @return The result of the expression being executed.
 	 */
@@ -100,7 +99,7 @@ class ExpressionProcessor {
 	/**
 	 * Parse and execute an expression, returning the result as a string.  Useful
 	 * for expressions that expect a simple result.
-	 * 
+	 *
 	 * @param expression
 	 * @return The expression as a string.
 	 */
