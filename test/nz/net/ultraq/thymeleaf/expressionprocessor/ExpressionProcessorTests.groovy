@@ -41,7 +41,7 @@ class ExpressionProcessorTests extends Specification {
 
 	def "Returns a fragment expression"() {
 		when:
-			def fragmentExpression = expressionProcessor.parseFragmentExpression('~{hello.html}')
+			var fragmentExpression = expressionProcessor.parseFragmentExpression('~{hello.html}')
 		then:
 			fragmentExpression instanceof FragmentExpression
 			fragmentExpression.templateName.execute(expressionContext) == 'hello.html'
@@ -49,7 +49,7 @@ class ExpressionProcessorTests extends Specification {
 
 	def "Returns a fragment expression - backwards compatibility wrapping for Thymeleaf 2"() {
 		when:
-			def fragmentExpression = expressionProcessor.parseFragmentExpression('hello.html')
+			var fragmentExpression = expressionProcessor.parseFragmentExpression('hello.html')
 		then:
 			fragmentExpression instanceof FragmentExpression
 			fragmentExpression.templateName.execute(expressionContext) == 'hello.html'
@@ -64,7 +64,7 @@ class ExpressionProcessorTests extends Specification {
 
 	def "Multi-line fragment expressions"() {
 		when:
-			def fragmentExpression = expressionProcessor.parseFragmentExpression('''~{hello::fragment(
+			var fragmentExpression = expressionProcessor.parseFragmentExpression('''~{hello::fragment(
 				'blah',
 				1)
 				}''')
@@ -75,7 +75,7 @@ class ExpressionProcessorTests extends Specification {
 
 	def "Multi-line fragment expressions - backwards compatibility wrapping for Thymeleaf 2"() {
 		when:
-			def fragmentExpression = expressionProcessor.parseFragmentExpression('''hello::fragment(
+			var fragmentExpression = expressionProcessor.parseFragmentExpression('''hello::fragment(
 				'blah',
 				1)''')
 		then:
