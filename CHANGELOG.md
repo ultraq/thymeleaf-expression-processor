@@ -3,7 +3,7 @@ Changelog
 =========
 
 ### 4.0.0
- - Upgrade Groovy to 5.0.2
+ - Upgrade Groovy to 5.0.4
  - Upgrade Thymeleaf to 3.1.3.RELEASE
  - Minimum required Java version is now 17
 

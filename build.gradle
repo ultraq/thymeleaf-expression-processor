@@ -16,14 +16,14 @@
 
 plugins {
 	id 'idea'
-	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.8.0'
+	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.9.3'
 }
 
 description = 'A simplified API for working with Thymeleaf expressions'
 version = '4.0.0-SNAPSHOT'
 group = 'nz.net.ultraq.thymeleaf'
 
-var thymeleafVersion = '3.1.2.RELEASE'
+var thymeleafVersion = '3.1.3.RELEASE'
 
 configure {
 	createGroovyLibraryProject()
@@ -42,13 +42,13 @@ configure {
 		.configureSource()
 			.withSourceDirectory('source')
 			.withDependencies() {
-				api 'org.apache.groovy:groovy:5.0.2'
+				api 'org.apache.groovy:groovy:5.0.4'
 				implementation "org.thymeleaf:thymeleaf:${thymeleafVersion}"
 			}
 		.configureVerification()
 			.withTestDirectory('test')
 			.withTestDependencies() {
-				testImplementation 'org.spockframework:spock-core:2.4-groovy-5.0-SNAPSHOT'
+				testImplementation 'org.spockframework:spock-core:2.4-groovy-5.0'
 				testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.17'
 			}
 			.useCodenarc(resources.text.fromUri('https://raw.githubusercontent.com/ultraq/codenarc-config-ultraq/master/codenarc.groovy'))
@@ -68,9 +68,11 @@ configure {
 			email: 'emanuelrabina@gmail.com',
 			url: 'https://www.ultraq.net.nz'
 		])
-		.publishToMavenCentral(
+
+	createMavenCentralPublisherBundle()
+		.forThisProject()
+		.withCredentials(
 			findProperty('mavenCentral.publisher.username'),
-			findProperty('mavenCentral.publisher.password'),
-			'nz.net.ultraq'
+			findProperty('mavenCentral.publisher.password')
 		)
 }
